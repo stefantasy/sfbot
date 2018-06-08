@@ -5,10 +5,10 @@
 -->
 <launch>
 
-  <node pkg="mx_teleop" type="mxbot_teleop_joy" name="mxbot_teleop_joystick">
+  <node pkg="sfbot_teleop" type="sfbot_teleop_joy" name="sfbot_teleop_joystick">
     <param name="scale_angular" value="1.5"/>
     <param name="scale_linear" value="0.5"/>
-    <remap from="mxbot_teleop_joystick/cmd_vel" to="/cmd_vel"/>
+    <remap from="sfbot_teleop_joystick/cmd_vel" to="/cmd_vel"/>
   </node>
 
   <node pkg="joy" type="joy_node" name="joystick"/>
