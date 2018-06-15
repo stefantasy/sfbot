@@ -9,9 +9,10 @@ echo "start copy mx_sensor.rules to  /etc/udev/rules.d/"
 echo "start copy 56-orbbec-usb.rules to  /etc/udev/rules.d/"
 
 sudo cp ./_udev_/rplidar.rules  /etc/udev/rules.d
-sudo cp ./_udev_/mx_chassis.rules  /etc/udev/rules.d
-sudo cp ./_udev_/mx_sensor.rules  /etc/udev/rules.d
+sudo cp ./_udev_/chassis.rules  /etc/udev/rules.d
+sudo cp ./_udev_/sensor.rules  /etc/udev/rules.d
 sudo cp ./_udev_/56-orbbec-usb.rules  /etc/udev/rules.d
+sudo cp ./_udev_/arduino.rules  /etc/udev/rules.d
 echo " "
 echo "Restarting udev"
 echo ""

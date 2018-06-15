@@ -1,14 +1,9 @@
 <launch>
 
-  <node pkg="tf" type="static_transform_publisher" name="base_to_footprint" args="0.05 0.0 0.0 0 0.0 0.0 base_link base_footprint 100"/>
+  <node pkg="tf" type="static_transform_publisher" name="base_to_footprint" args="0.0 0.0 0.0 0 0.0 0.0 base_link base_footprint 100"/>
 
-  <node name="sfbot_chassis" pkg="ros_arduino_python" type="arduino_node.py" output="screen">
-    <rosparam file="$(find ros_arduino_python)/config/sfbot_params.yaml" command="load" />
-  </node>
-
-  <node name="sfbot_teleop" pkg="sfbot_teleop" type="sfbot_teleop_keyboard.py" output="screen">
-  <param name="~speed"    value="0.25"/>
-  <param name="~turn"    value="1.0"/>
-  </node>
+  <include file="$(find sfbot_bringup)/launch/chassis_start.launch"/>
+  <include file="$(find sfbot_teleop)/launch/keyboard_teleop.launch"/>
+  <include file="$(find sfbot_bringup)/launch/urdf.launch"/>
 
 </launch>
