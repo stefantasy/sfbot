@@ -1,5 +1,5 @@
 <launch>
-  <node pkg="sfbot_vision" name="face_detector" type="face_detector.py" output="screen">
+  <node pkg="mx3_vision" name="face_detector" type="face_detector.py" output="screen">
 
     <remap from="input_rgb_image" to="/camera/rgb/image_color" />
     
@@ -10,9 +10,9 @@
        haar_maxSize: 150
     </rosparam>
 
-   	<param name="cascade_1" value="$(find sfbot_vision)/data/haar_detectors/haarcascade_frontalface_alt2.xml" />
-  	<param name="cascade_2" value="$(find sfbot_vision)/data/haar_detectors/haarcascade_frontalface_alt.xml" />
-  	<param name="cascade_3" value="$(find sfbot_vision)/data/haar_detectors/haarcascade_profileface.xml" />
+   	<param name="cascade_1" value="$(find mx3_vision)/data/haar_detectors/haarcascade_frontalface_alt2.xml" />
+  	<param name="cascade_2" value="$(find mx3_vision)/data/haar_detectors/haarcascade_frontalface_alt.xml" />
+  	<param name="cascade_3" value="$(find mx3_vision)/data/haar_detectors/haarcascade_profileface.xml" />
 
   </node>
 </launch>

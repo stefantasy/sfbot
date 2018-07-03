@@ -1,5 +1,5 @@
 <launch>
-  <node pkg="sfbot_vision" name="camshift" type="camshift.py" output="screen">
+  <node pkg="mx3_vision" name="camshift" type="camshift.py" output="screen">
     <remap from="input_rgb_image" to="/camera/rgb/image_color" />
     <rosparam>
        smin: 85

@@ -1,7 +1,5 @@
 <launch>
 
-  <node pkg="tf" type="static_transform_publisher" name="base_to_footprint" args="0.0 0.0 0.0 0 0.0 0.0 base_link base_footprint 100"/>
-
   <include file="$(find sfbot_bringup)/launch/chassis_start.launch"/>
   <include file="$(find sfbot_teleop)/launch/keyboard_teleop.launch"/>
   <include file="$(find sfbot_bringup)/launch/urdf.launch"/>
