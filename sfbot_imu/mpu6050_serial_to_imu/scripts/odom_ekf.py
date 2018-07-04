@@ -39,7 +39,7 @@ class OdomEKF():
         rospy.wait_for_message('input', PoseWithCovarianceStamped)
         
         # Subscribe to the /odom_combined topic
-        rospy.Subscriber('input', PoseWithCovarianceStamped, self.pub_ekf_odom)
+        rospy.Subscriber('/robot_pose_ekf/odom_combined', PoseWithCovarianceStamped, self.pub_ekf_odom)
         
         rospy.loginfo("Publishing combined odometry on /odom_ekf")
         
