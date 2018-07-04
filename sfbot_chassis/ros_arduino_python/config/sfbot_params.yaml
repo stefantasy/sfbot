@@ -14,7 +14,7 @@ use_base_controller: true
 base_controller_rate: 10
 
 # For a robot that uses base_footprint, change base_frame to base_footprint
-base_frame: base_footprint
+base_frame: base_link
 
 # === Robot drivetrain parameters
 wheel_diameter: 0.095
@@ -35,12 +35,12 @@ debugPID: False
 #Ko: 50
 accel_limit: 1.0
 
-left_Kp: 20
+left_Kp: 40
 left_Kd: 12
 left_Ki: 0
 left_Ko: 50
 
-right_Kp: 20
+right_Kp: 40
 right_Kd: 12
 right_Ki: 0
 right_Ko: 50
