@@ -116,7 +116,7 @@ class BaseController:
         
         # Set up the odometry broadcaster
         self.odomPub = rospy.Publisher('odom', Odometry, queue_size=1000)
-        #self.odomBroadcaster = TransformBroadcaster()
+        self.odomBroadcaster = TransformBroadcaster()
         
         rospy.loginfo("Started base controller for a base of " + str(self.wheel_track) + "m wide with " + str(self.encoder_resolution) + " ticks per rev")
         rospy.loginfo("Publishing odometry data at: " + str(self.rate) + " Hz using " + str(self.base_frame) + " as base frame")
@@ -255,8 +255,8 @@ class BaseController:
                 (self.x, self.y, 0), 
                 (quaternion.x, quaternion.y, quaternion.z, quaternion.w),
                 rospy.Time.now(),
-                 self.base_frame,
-                 "odom"
+                self.base_frame,
+                "odom"
                 )
     
             odom = Odometry()
