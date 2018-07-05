@@ -27,7 +27,7 @@ import os
 from math import sin, cos, pi
 from geometry_msgs.msg import Quaternion, Twist, Pose
 from nav_msgs.msg import Odometry
-from tf.broadcaster import TransformBroadcaster
+#from tf.broadcaster import TransformBroadcaster
 from std_msgs.msg import Int32
 from covariances import \
      ODOM_POSE_COVARIANCE, ODOM_POSE_COVARIANCE2, ODOM_TWIST_COVARIANCE, ODOM_TWIST_COVARIANCE2
@@ -116,7 +116,7 @@ class BaseController:
         
         # Set up the odometry broadcaster
         self.odomPub = rospy.Publisher('odom', Odometry, queue_size=1000)
-        self.odomBroadcaster = TransformBroadcaster()
+        #self.odomBroadcaster = TransformBroadcaster()
         
         rospy.loginfo("Started base controller for a base of " + str(self.wheel_track) + "m wide with " + str(self.encoder_resolution) + " ticks per rev")
         rospy.loginfo("Publishing odometry data at: " + str(self.rate) + " Hz using " + str(self.base_frame) + " as base frame")
@@ -251,17 +251,17 @@ class BaseController:
             quaternion.w = cos(self.th / 2.0)
     
             # Create the odometry transform frame broadcaster.
-            self.odomBroadcaster.sendTransform(
-                (self.x, self.y, 0), 
-                (quaternion.x, quaternion.y, quaternion.z, quaternion.w),
-                rospy.Time.now(),
-                self.base_frame,
-                "odom"
-                )
+            #self.odomBroadcaster.sendTransform(
+                #(self.x, self.y, 0), 
+               # (quaternion.x, quaternion.y, quaternion.z, quaternion.w),
+                #rospy.Time.now(),
+                #self.base_frame,
+               # "odom"
+               # )
     
             odom = Odometry()
-            odom.header.frame_id = "odom"
-            odom.child_frame_id = self.base_frame
+            #odom.header.frame_id = "odom"
+            #odom.child_frame_id = self.base_frame
             odom.header.stamp = now
             odom.pose.pose.position.x = self.x
             odom.pose.pose.position.y = self.y

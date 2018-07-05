@@ -1,6 +1,6 @@
 <launch>
 
-  <include file="$(find sfbot_bringup)/launch/mini_start.launch" />
+  <include file="$(find sfbot_bringup)/launch/mini_start_notf.launch" />
 
   <arg name="lr200" default="false" />
   <arg name="r200" default="false" />
