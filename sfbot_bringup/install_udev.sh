@@ -17,6 +17,6 @@ echo " "
 echo "Restarting udev"
 echo ""
 sudo service udev reload
+sleep 1
 sudo service udev restart
-echo "finish "
-echo "BY Maxwell AT:2017.10.16"
+echo "finished "
