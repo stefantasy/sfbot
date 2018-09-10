@@ -1,3 +1,0 @@
-<launch>
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find sfbot_nav)/rviz/gmapping_ekf.rviz"/>
-</launch>
