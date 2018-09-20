@@ -1,0 +1,10 @@
+<launch>
+  <include file="$(find sfbot_bringup)/launch/base_start.launch" />
+  <arg name="ls01d" default="false" />
+  <arg name="ls01b" default="false" />
+  <arg name="rplidar" default="true" />
+
+  <include if="$(arg ls01d)" file="$(find sfbot_bringup)/launch/ls01d.launch" />
+  <include if="$(arg ls01b)" file="$(find sfbot_bringup)/launch/ls01b.launch"/>
+  <include if="$(arg rplidar)" file="$(find sfbot_bringup)/launch/rplidar.launch"/>
+</launch>
