@@ -1,12 +1,10 @@
 <launch>
+  <include file="$(find sfbot_bringup)/launch/base_start.launch" />
+  <arg name="ls01d" default="false" />
+  <arg name="ls01b" default="false" />
+  <arg name="rplidar" default="true" />
 
-  <include file="$(find sfbot_bringup)/launch/mini_start.launch" />
-  <node name="rplidarNode"          pkg="rplidar_ros"  type="rplidarNode" output="screen">
-  <param name="serial_port"         type="string" value="/dev/rplidar"/>  
-  <param name="serial_baudrate"     type="int"    value="115200"/>
-  <param name="frame_id"            type="string" value="lidar_link"/>
-  <param name="inverted"            type="bool"   value="false"/>
-  <param name="angle_compensate"    type="bool"   value="true"/>
-  </node>
-
+  <include if="$(arg ls01d)" file="$(find sfbot_bringup)/launch/ls01d.launch" />
+  <include if="$(arg ls01b)" file="$(find sfbot_bringup)/launch/ls01b.launch"/>
+  <include if="$(arg rplidar)" file="$(find sfbot_bringup)/launch/rplidar.launch"/>
 </launch>
