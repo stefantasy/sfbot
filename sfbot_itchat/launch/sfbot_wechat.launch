@@ -1,3 +1,0 @@
-<launch>
-  <node name="ros_wechat" pkg="sfbot_itchat" type="ros_wechat.py" output="screen" />
-</launch>
