@@ -1,5 +1,5 @@
 <launch>  
-  <node pkg="mx_apps" name="object_follower" type="object_follower.py" output="screen">
+  <node pkg="sfbot_vision" name="object_follower" type="object_follower.py" output="screen">
   
     <remap from="camera_info" to="/camera/rgb/camera_info" />
     <remap from="depth_image" to="/camera/depth/image" />

@@ -1,6 +1,6 @@
 <launch>
   <node pkg="sfbot_vision" name="camshift" type="camshift.py" output="screen">
-    <remap from="input_rgb_image" to="/image_raw" />
+    <remap from="input_rgb_image" to="/camera/rgb/image_raw" />
     <rosparam>
        smin: 85
        vmin: 50
